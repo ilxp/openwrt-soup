@@ -1,0 +1,10 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@soup[-1]
+	add ucitrack soup
+	set ucitrack.@soup[-1].init=soup
+	commit ucitrack
+EOF
+
+exit 0
